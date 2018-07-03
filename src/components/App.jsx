@@ -1,10 +1,18 @@
-import React from 'react'
+import React from 'react';
+import Title from './Title';
+import {Route, Switch} from 'react-router-dom';
 
-function App(){
-  return(
-    <div>
-    </div>
-  );
+class App extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  render(){
+    return(
+      <div>
+        <Title/>
+      </div>
+    );
+  }
 }
 
 export default App
