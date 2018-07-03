@@ -8,6 +8,7 @@ function CreatePet(){
   event.preventDefault();
   _name.value='';
   _petname.value='';
+
 }
 
   return(
