@@ -8,24 +8,24 @@ class CreatePetControl extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      formVisible: true
+      formVisible: false
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.madePet = this.madePet.bind(this);
   }
-  handleClick(){
-    this.setState({formVisible: false});
+  madePet(){
+    this.setState({formVisible: true});
   }
 
   render(){
-    let formVisible = null;
+    let currentlyVisible = null;
     if (this.state.formVisible) {
-      formVisible  = <CreatePet/>;
+      currentlyVisible  = <Pet/>;
     } else {
-      formVisible = <Pet/>
+      currentlyVisible = <CreatePet onMadePet = {this.madePet}/>;
     }
     return (
       <div>
-        {formVisible}
+        {currentlyVisible}
       </div>
     );
   }

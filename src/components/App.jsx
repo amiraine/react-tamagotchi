@@ -13,7 +13,7 @@ class App extends React.Component{
       <div>
         <Title/>
         <Switch>
-          <Route exact path ='/' component={CreatePetControl} />
+          <Route exact path ='/' component={CreatePet} />
 
         </Switch>
       </div>

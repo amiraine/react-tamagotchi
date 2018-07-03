@@ -1,14 +1,31 @@
 import React from 'react';
 
 function CreatePet(){
+  let _name = null;
+  let _petname = null;
+
+  function handleCreatePetSubmission(event) {
+  event.preventDefault();
+  _name.value='';
+  _petname.value='';
+}
+
   return(
     <div>
-      <form>
+      <form onSubmit={handleCreatePetSubmission}>
         <label>What's your name?</label>
-        <input type='text' placeholder='Enter your name' required/>
+        <input
+          type='text'
+          placeholder='Enter your name'
+          id='name'
+          ref={(input)=> {_name = input;}} />
         <label>Name your pet!</label>
-        <input type='text' placeholder="Enter pet name" required/>
-        <button type='submit' onClick={this.handleClick}>Go!</button>
+        <input
+          type='text'
+          placeholder="Enter pet name"
+          id='petname'
+          ref={(input)=> {_petname = input;}} />
+        <button type='submit'>Go!</button>
       </form>
     </div>
   );
