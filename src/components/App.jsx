@@ -1,6 +1,8 @@
 import React from 'react';
 import Title from './Title';
 import {Route, Switch} from 'react-router-dom';
+import CreatePet from './CreatePet';
+import CreatePetControl from './CreatePetControl';
 
 class App extends React.Component{
   constructor(props){
@@ -10,9 +12,13 @@ class App extends React.Component{
     return(
       <div>
         <Title/>
+        <Switch>
+          <Route exact path ='/' component={CreatePetControl} />
+
+        </Switch>
       </div>
     );
   }
 }
 
-export default App
+export default App;
