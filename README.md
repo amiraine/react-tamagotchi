@@ -8,6 +8,10 @@
 
 A Pikachu tamagotchi app whose stats tick down over time unless it is fed, rested, and played with.
 
+### Known bugs
+
+* "ran away" conditional doesn't work
+
 ### Setup instructions
 1. Clone from git repository [https://github.com/amiraine/react-tamagotchi.git]
 2. Navigate to project directory in your command terminal
