@@ -27,8 +27,6 @@ class App extends React.Component{
     this.deathTimer = setInterval(() =>
       this.statDecrement(), 3000
     );
-    console.log(this.state.alive);
-    console.log(this.state.adopted);
   }
 
   statDecrement(){
@@ -56,11 +54,11 @@ class App extends React.Component{
       alive: currentAlive,
       adopted: currentAdopt
     });
+    console.log(this.state.adopted);
   }
 
   handleFood(){
-    this.setState({hunger: this.state.hunger += 5})
-    console.log(this.state.hunger);
+    this.setState({hunger: this.state.hunger += 5});
   }
   handleSleep(){
     this.setState({sleep: this.state.sleep +=5});
@@ -73,7 +71,11 @@ class App extends React.Component{
       <div>
         <style jsx>{`
           .frame{
-            background: #ff1e8b;
+            background: url('https://openclipart.org/download/236488/3DStarYellow.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 700px;
+            background-color: #ff1e8b;
             height: 80vw;
             width: 80vw;
             -webkit-clip-path: ellipse(43% 50% at 50% 50%);

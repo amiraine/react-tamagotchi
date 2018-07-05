@@ -7,13 +7,14 @@ import ranaway from '../assets/images/ranaway.png';
 
 function Pet(props){
   let petimage;
-  if(props.hunger >50 || props.sleep >50 || props.fun > 50){
+
+  if(props.hunger > 50 || props.sleep >50 || props.fun > 50){
     petimage = alive;
-  } else if (props.hunger <=50 || props.sleep <= 50 || props.fun <= 50){
-    petimage = sick;
-  } else if (props.alive === false || props.hunger <=0){
+  } else if (props.alive === false && props.hunger === 0){
     petimage = dead;
-  } else if (props.adopted === false || props.fun <=0){
+  } else if (props.hunger + props.sleep + props.fun <=150){
+    petimage = sick;
+  } else if (props.adopted === false || props.fun === 0 && props.hunger + props.sleep >0){
     petimage = ranaway;
   }
   return(

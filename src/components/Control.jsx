@@ -30,8 +30,8 @@ function Control(props){
         }
         button{
           background-color: navy;
-          height:25px;
-          width: 25px;
+          height: 35px;
+          width: 35px;
           border-radius: 50%;
           border: 1px transparent;
           box-shadow: -3px 1px rgba(0,0,0,.5);
