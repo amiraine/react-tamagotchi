@@ -12,7 +12,7 @@ function Title(){
           position: relative;
           top: 8vw;
           color: #faff00;
-          font-size: 3em;
+          font-size: 3.5em;
           text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
       `}</style>

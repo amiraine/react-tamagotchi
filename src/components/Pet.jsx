@@ -1,7 +1,21 @@
 import React from 'react';
-import Status from './Status';
-function Pet(){
+import PropTypes from 'prop-types';
+import alive from '../assets/images/alive.gif';
+import sick from '../assets/images/unwell.gif';
+import dead from '../assets/images/dead.png';
+import ranaway from '../assets/images/ranaway.png';
 
+function Pet(props){
+  let petimage;
+  if(props.hunger >50 || props.sleep >50 || props.fun > 50){
+    petimage = alive;
+  } else if (props.hunger <=50 || props.sleep <= 50 || props.fun <= 50){
+    petimage = sick;
+  } else if (props.alive === false || props.hunger <=0){
+    petimage = dead;
+  } else if (props.adopted === false || props.fun <=0){
+    petimage = ranaway;
+  }
   return(
     <div className="pet">
       <style jsx>{`
@@ -20,16 +34,24 @@ function Pet(){
           align-items: center;
           box-shadow: -3px 3px 5px rgba(0,0,0,.5);
           flex-direction: column;
+          padding: 10vw;
         }
         img{
           height: 20vw;
           padding-bottom: 100px;
         }
       `}</style>
-      <Status/>
-      <img src="https://78.media.tumblr.com/7dc715287c03db5605370b38e81f91ff/tumblr_mwkliziKZA1scncwdo1_500.gif"/>
+
+    <img src={petimage}/>
     </div>
   )
+}
+Pet.propTypes = {
+  hunger: PropTypes.number,
+  sleep: PropTypes.number,
+  fun: PropTypes.number,
+  alive: PropTypes.bool,
+  adopted: PropTypes.bool
 }
 
 export default Pet;

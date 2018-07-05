@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function Control(){
+function Control(props){
 
   return(
     <div className="control-wrapper">
@@ -14,7 +15,7 @@ function Control(){
           margin: auto;
           z-index: 3;
           position: absolute;
-          top: 65vw;
+          top: 70vw;
           left: 30vw;
           width: 40vw;
         }
@@ -39,19 +40,23 @@ function Control(){
         button:click
       `}</style>
       <div className="button-wrapper">
-        <button></button>
+        <button onClick={props.onHandleFeed}/>
         <p>Feed</p>
       </div>
       <div className="button-wrapper">
-        <button></button>
+        <button onClick={props.onHandleSleep}/>
         <p>Sleep</p>
       </div>
       <div className="button-wrapper">
-        <button/>
+        <button onClick={props.onHandlePlay}/>
         <p>Play</p>
       </div>
     </div>
   )
 }
-
+Control.propTypes = {
+  onHandlePlay: PropTypes.func,
+  onHandleFeed: PropTypes.func,
+  onHandleSleep: PropTypes.func
+}
 export default Control;
